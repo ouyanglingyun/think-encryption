@@ -1,6 +1,8 @@
 {
     "name": "lingyun/think-encryption",
     "description": "The ThinkPHP6 Encryption package.",
+    "type": "think-extend",
+    "homepage": "https://github.com/ouyanglingyun",
     "authors": [
         {
             "name": "ouyanglingyun",
