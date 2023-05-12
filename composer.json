@@ -1,0 +1,38 @@
+{
+    "name": "lingyun/think-encryption",
+    "description": "The ThinkPHP6 Encryption package.",
+    "authors": [
+        {
+            "name": "ouyanglingyun",
+            "email": "582194733@qq.com"
+        }
+    ],
+    "license": "Apache-2.0",
+    "require": {
+        "topthink/framework": "^6.0",
+        "ext-hash": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "lingyun\\": "src"
+        }
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "lingyun\\encryption\\EncrypterService"
+            ],
+            "config": {
+                "encrypter": "src/config.php"
+            }
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "topthink/think-installer": true
+        }
+    },
+    "minimum-stability": "dev"
+}
