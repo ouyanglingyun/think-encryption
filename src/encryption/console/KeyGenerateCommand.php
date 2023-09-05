@@ -1,10 +1,10 @@
 <?php
 
-namespace lingyun\encryption\console;
+namespace think\encryption\console;
 
-use lingyun\encryption\Encrypter;
 use think\console\Command;
 use think\console\input\Option;
+use think\encryption\Encrypter;
 
 class KeyGenerateCommand extends Command
 {
@@ -36,7 +36,7 @@ class KeyGenerateCommand extends Command
             return;
         }
 
-        $cipher = $this->app->config->get('encrypter.cipher');
+        $cipher = $this->app->config->get('crypt.cipher');
 
         $this->app->config->set(['key' => $key, 'cipher' => $cipher], 'encrypter');
 
@@ -51,7 +51,7 @@ class KeyGenerateCommand extends Command
     protected function generateRandomKey()
     {
         return 'base64:' . base64_encode(
-            Encrypter::generateKey($this->app->config->get('encrypter.cipher'))
+            Encrypter::generateKey($this->app->config->get('crypt.cipher'))
         );
     }
 
@@ -63,7 +63,7 @@ class KeyGenerateCommand extends Command
      */
     protected function setKeyInEnvironmentFile($key)
     {
-        $currentKey = $this->app->config->get('encrypter.key');
+        $currentKey = $this->app->config->get('crypt.key');
 
         if (strlen($currentKey) !== 0 && (!$this->input->getOption('force'))) {
             $this->output->writeln('<error>The encryption key Settings have already been set.</error>');
@@ -118,7 +118,7 @@ class KeyGenerateCommand extends Command
      */
     protected function keyReplacementPattern()
     {
-        $escaped = preg_quote($this->app->config->get('encrypter.key'), '/');
+        $escaped = preg_quote($this->app->config->get('crypt.key'), '/');
         return "/^\[ENCRYPTER\]" . PHP_EOL . "KEY\s*=\s*{$escaped}/m";
     }
 }

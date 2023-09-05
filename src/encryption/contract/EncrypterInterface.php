@@ -1,6 +1,6 @@
 <?php
 
-namespace lingyun\encryption\contract;
+namespace think\encryption\contract;
 
 interface EncrypterInterface
 {
@@ -11,7 +11,7 @@ interface EncrypterInterface
      * @param  bool  $serialize
      * @return string
      *
-     * @throws \lingyun\encryption\exception\EncryptException
+     * @throws \think\encryption\exception\EncryptException
      */
     public function encrypt(mixed $value, bool $serialize = true): string;
 
@@ -22,7 +22,7 @@ interface EncrypterInterface
      * @param  bool  $unserialize
      * @return mixed
      *
-     * @throws \lingyun\encryption\exception\DecryptException
+     * @throws \think\encryption\exception\DecryptException
      */
     public function decrypt(string $payload, bool $unserialize = true): mixed;
 

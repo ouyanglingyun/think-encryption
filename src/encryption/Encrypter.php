@@ -1,12 +1,12 @@
 <?php
 
-namespace lingyun\encryption;
+namespace think\encryption;
 
 use RuntimeException;
-use lingyun\encryption\contract\EncrypterInterface;
-use lingyun\encryption\contract\StringEncrypterInterface;
-use lingyun\encryption\exception\DecryptException;
-use lingyun\encryption\exception\EncryptException;
+use think\encryption\contract\EncrypterInterface;
+use think\encryption\contract\StringEncrypterInterface;
+use think\encryption\exception\DecryptException;
+use think\encryption\exception\EncryptException;
 
 class Encrypter implements EncrypterInterface, StringEncrypterInterface
 {
@@ -92,7 +92,7 @@ class Encrypter implements EncrypterInterface, StringEncrypterInterface
      * @param  bool  $serialize
      * @return string
      *
-     * @throws \lingyun\encryption\exception\EncryptException
+     * @throws \think\encryption\exception\EncryptException
      */
     public function encrypt(mixed $value, bool $serialize = true): string
     {
@@ -133,7 +133,7 @@ class Encrypter implements EncrypterInterface, StringEncrypterInterface
      * @param  string  $value
      * @return string
      *
-     * @throws \lingyun\encryption\exception\EncryptException
+     * @throws \think\encryption\exception\EncryptException
      */
     public function encryptString(mixed $value): string
     {
@@ -147,7 +147,7 @@ class Encrypter implements EncrypterInterface, StringEncrypterInterface
      * @param bool $unserialize
      * @return mixed
      *
-     * @throws \lingyun\encryption\exception\DecryptException
+     * @throws \think\encryption\exception\DecryptException
      */
     public function decrypt(string $payload, bool $unserialize = true): mixed
     {
@@ -181,7 +181,7 @@ class Encrypter implements EncrypterInterface, StringEncrypterInterface
      * @param  string  $payload
      * @return string
      *
-     * @throws \lingyun\encryption\exception\DecryptException
+     * @throws \think\encryption\exception\DecryptException
      */
     public function decryptString(string $payload): string
     {
@@ -206,7 +206,7 @@ class Encrypter implements EncrypterInterface, StringEncrypterInterface
      * @param  string  $payload
      * @return array
      *
-     * @throws \lingyun\encryption\exception\DecryptException
+     * @throws \think\encryption\exception\DecryptException
      */
     protected function getJsonPayload(string $payload)
     {

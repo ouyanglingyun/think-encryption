@@ -31,8 +31,8 @@ Before using ThinkPHP's encrypter, you must set the `key` configuration option i
 You may encrypt a value using the `encryptString` method provided by the `Crypt` facade. All encrypted values are encrypted using OpenSSL and the AES-256-CBC cipher.Furthermore, all encrypted values are signed with a message authentication code (MAC). The integrated message authentication code will prevent the decryption of any values that have been tampered with by malicious users:
 
 
-    use lingyun\facade\Crypt;
-    use lingyun\encryption\exception\EncryptException;
+    use think\facade\Crypt;
+    use think\encryption\exception\EncryptException;
 
     try {
         $encrypted = Crypt::encryptString($valueToBeEncrypted);
@@ -43,10 +43,10 @@ You may encrypt a value using the `encryptString` method provided by the `Crypt`
 <a name="decrypting-a-value"></a>
 #### Decrypting A Value
 
-You may decrypt values using the `decryptString` method provided by the `Crypt` facade. If the value can not be properly decrypted, such as when the message authentication code is invalid, an `lingyun\encryption\exception\DecryptException` will be thrown:
+You may decrypt values using the `decryptString` method provided by the `Crypt` facade. If the value can not be properly decrypted, such as when the message authentication code is invalid, an `think\encryption\exception\DecryptException` will be thrown:
 
-    use lingyun\encryption\exception\DecryptException;
-    use lingyun\facade\Crypt;
+    use think\encryption\exception\DecryptException;
+    use think\facade\Crypt;
 
     try {
         $decrypted = Crypt::decryptString($encryptedValue);

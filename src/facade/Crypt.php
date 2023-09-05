@@ -1,6 +1,6 @@
 <?php
 
-namespace lingyun\facade;
+namespace think\facade;
 
 use think\Facade;
 
@@ -13,7 +13,7 @@ use think\Facade;
  * @method static string decryptString(string $payload)
  * @method static string getKey()
  *
- * @see \lingyun\encryption\Encrypter
+ * @see \think\encryption\Encrypter
  */
 class Crypt extends Facade
 {

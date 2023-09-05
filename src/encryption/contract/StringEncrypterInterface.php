@@ -1,6 +1,6 @@
 <?php
 
-namespace lingyun\encryption\contract;
+namespace think\encryption\contract;
 
 interface StringEncrypterInterface
 {
@@ -10,7 +10,7 @@ interface StringEncrypterInterface
      * @param  mixed  $value
      * @return string
      *
-     * @throws \lingyun\encryption\exception\EncryptException
+     * @throws \think\encryption\exception\EncryptException
      */
     public function encryptString(mixed $value): string;
 
@@ -20,7 +20,7 @@ interface StringEncrypterInterface
      * @param  string  $payload
      * @return string
      *
-     * @throws \lingyun\encryption\exception\DecryptException
+     * @throws \think\encryption\exception\DecryptException
      */
     public function decryptString(string $payload): string;
 }

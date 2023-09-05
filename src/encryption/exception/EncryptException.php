@@ -1,6 +1,6 @@
 <?php
 
-namespace lingyun\encryption\exception;
+namespace think\encryption\exception;
 
 use RuntimeException;
 

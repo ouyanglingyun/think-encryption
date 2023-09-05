@@ -1,12 +1,12 @@
 <?php
 
-namespace lingyun\encryption;
+namespace think\encryption;
 
-use lingyun\encryption\Encrypter;
-use lingyun\encryption\console\KeyGenerateCommand;
-use lingyun\encryption\contract\EncrypterInterface;
-use lingyun\encryption\contract\StringEncrypterInterface;
-use lingyun\encryption\exception\MissingAppKeyException;
+use think\encryption\Encrypter;
+use think\encryption\console\KeyGenerateCommand;
+use think\encryption\contract\EncrypterInterface;
+use think\encryption\contract\StringEncrypterInterface;
+use think\encryption\exception\MissingAppKeyException;
 use think\helper\Str;
 
 class EncrypterService extends \think\Service
@@ -21,7 +21,7 @@ class EncrypterService extends \think\Service
 
     protected function makeEncrypter()
     {
-        $config = $this->app->config->get('encrypter', []);
+        $config = $this->app->config->get('crypt', []);
         return new Encrypter($this->parseKey($config), $config['cipher']);
     }
 

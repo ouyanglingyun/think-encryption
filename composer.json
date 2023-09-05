@@ -2,6 +2,10 @@
     "name": "lingyun/think-encryption",
     "description": "The ThinkPHP6 Encryption package.",
     "type": "think-extend",
+    "keywords": [
+        "encryption",
+        "thinkphp encryption"
+    ],
     "homepage": "https://github.com/ouyanglingyun",
     "authors": [
         {
@@ -18,22 +22,17 @@
     },
     "autoload": {
         "psr-4": {
-            "lingyun\\": "src"
+            "think\\": "src"
         }
     },
     "extra": {
         "think": {
             "services": [
-                "lingyun\\encryption\\EncrypterService"
+                "think\\encryption\\EncrypterService"
             ],
             "config": {
-                "encrypter": "src/config.php"
+                "crypt": "src/config.php"
             }
-        }
-    },
-    "config": {
-        "allow-plugins": {
-            "topthink/think-installer": true
         }
     },
     "minimum-stability": "dev"
