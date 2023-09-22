@@ -1,10 +1,5 @@
 # Encryption
 
-- [Introduction](#introduction)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Using The Encrypter](#using-the-encrypter)
-
 <a name="introduction"></a>
 ## Introduction
 
