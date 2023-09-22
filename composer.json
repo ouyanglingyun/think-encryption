@@ -31,7 +31,7 @@
                 "think\\encryption\\EncrypterService"
             ],
             "config": {
-                "crypt": "src/config.php"
+                "crypt": "src/Config.php"
             }
         }
     },
